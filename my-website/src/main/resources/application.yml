@@ -1,0 +1,5 @@
+server:
+  port: 8080
+
+time:
+  url: http://localhost:8081/time

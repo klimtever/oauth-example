@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Website - Current time</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        function refreshTime() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    document.getElementById("currentTime").innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open("GET", "/api/time", true);
+            xhttp.send();
+        }
+
+        /*]]>*/
+    </script>
+</head>
+<body>
+<h1>My Website</h1>
+<p>
+    The current time is: <span id="currentTime" th:text="${currentTime}"></span>
+</p>
+</body>
+</html>

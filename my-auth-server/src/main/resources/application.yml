@@ -1,0 +1,14 @@
+server:
+  port: 9090
+  servlet:
+    context-path: "/auth"
+
+# Our certificate settings for enabling JWT tokens
+jwt:
+  certificate:
+    store:
+      file: classpath:/certificate/my-auth-server.jks
+      password: storepassword
+    key:
+      alias: myauthserver
+      password: keypassword
