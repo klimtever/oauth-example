@@ -3,3 +3,13 @@ server:
 
 time:
   url: http://localhost:8081/time
+
+security:
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:9090/auth/oauth/token
+      userAuthorizationUri: http://localhost:9090/auth/oauth/authorize
+      clientId: mywebsite
+      clientSecret: verysecretpassword
+    resource:
+      userInfoUri: http://localhost:9090/auth/user
